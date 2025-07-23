@@ -1,12 +1,12 @@
-import Home from './pages/Home'
 
-function App() {
+import AppSidebar from "./components/AppSidebar"
+import Home from "./pages/Home"
 
+export default function Layout() {
   return (
     <>
-     <Home/>
+    <AppSidebar/>
+    <Home/>
     </>
   )
 }
-
-export default App

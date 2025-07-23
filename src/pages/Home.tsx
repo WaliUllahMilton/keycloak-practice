@@ -1,6 +1,7 @@
 import { useKeycloak } from '@react-keycloak/web';
 import ValidUsersDashboard from '../components/ValidUsersDashboard';
 import { useEffect, useState } from 'react';
+import UsersData from '../components/UsersData';
 // import axios from 'axios';
 // import { useEffect, useState } from 'react';
 
@@ -15,15 +16,7 @@ function Home() {
   if(roles){
     return (
       <div>
-        {
-          keycloak.hasRealmRole("COMP_DEPT") ? <div>Comp Dept</div>:
-          roles.length >0 && roles.map((role)=>{
-            return(
-              <p key={role}>{role}</p>
-            )
-          })
-        }
-        <p onClick={()=> keycloak.logout()}>logout</p>
+        <UsersData/>
       </div>
     )
   }
